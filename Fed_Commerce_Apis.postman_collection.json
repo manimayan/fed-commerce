@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "881e87e9-358f-4d50-8436-07263b6e618b",
+		"name": "Fed_Commerce_Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6912215"
+	},
+	"item": [
+		{
+			"name": "sawgger",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/consume/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consume",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator_refresh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"no1\":12,\r\n    \"no2\":13,\r\n    \"op\":\"+\"\r\n}                                       ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/actuator/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"actuator",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"manimayan11\",\r\n    \"password\": \"12345678\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/product/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_CartList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/cart/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cart",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"madhu13\",\r\n    \"quantity\": 9,\r\n    \"productId\": 4\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/cart/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cart",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"sku\": 10,\r\n   \"quantity\": 14\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/product/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"product",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"madhu13\",\r\n    \"product\": [\r\n        {\r\n            \"sku\": 9,\r\n            \"quantity\": 4\r\n        },\r\n        {\r\n            \"sku\": 10,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8081/order/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"order",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_cart_for_user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/cart/get/manimayan11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cart",
+						"get",
+						"manimayan11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_cart_for_user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/cart/delete/manimayan11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cart",
+						"delete",
+						"manimayan11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_cartProduct_for_user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"manimayan11\",\r\n    \"quantity\": 4,\r\n    \"productId\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/cart/prod/delete?userId=madhu13&prodId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cart",
+						"prod",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "madhu13"
+						},
+						{
+							"key": "prodId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
