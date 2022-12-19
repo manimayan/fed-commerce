@@ -62,7 +62,7 @@ public class CartRepositoryImpl implements CartRepository {
     @Override
     @Transactional
     public void deleteProdCart(String userId, int prodId) {
-        Query query = entityManager.createQuery("delete from Cart WHERE user.userId=:userId AND product.prodId =: productId");
+        Query query = entityManager.createQuery("delete from Cart WHERE user.userId=:userId AND product.sku =: productId");
         query.setParameter("userId", userId);
         query.setParameter("productId", prodId);
         query.executeUpdate();

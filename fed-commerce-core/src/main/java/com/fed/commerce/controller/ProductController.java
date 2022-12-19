@@ -24,7 +24,7 @@ public class ProductController {
     ProductService service;
 
     @PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Response> updateUser(@RequestBody ProductDto prodInputData) {
+    public ResponseEntity<Response> updateProduct(@RequestBody ProductDto prodInputData) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         boolean data;
         Response cartResponse = new Response();
@@ -36,6 +36,8 @@ public class ProductController {
                 if (data) {
                     status = HttpStatus.OK;
                     cartResponse.setResponse("product updated successfully", true);
+                } else {
+                    cartResponse.setResponse("no product found to update", false);
                 }
             } else {
                 cartResponse.setResponse("incomplete product data", false);

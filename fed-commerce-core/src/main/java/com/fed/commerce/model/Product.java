@@ -49,7 +49,7 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product")
     @JsonIgnore
     @ToString.Exclude
-    private Set<Order> orders = new LinkedHashSet<>();
+    private Set<Orders> Orderss = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "product")
     @JsonIgnore
@@ -63,6 +63,7 @@ public class Product implements Serializable {
     public Product(ProductDto prodInputData) {
         this.sku = prodInputData.getSku();
         this.name = prodInputData.getName();
+        this.description=prodInputData.getDescription();
         this.category = prodInputData.getCategory();
         this.price = prodInputData.getPrice();
         this.quantity = prodInputData.getQuantity();
@@ -70,17 +71,18 @@ public class Product implements Serializable {
 
     public void updateProductInputData(Product output, Product prodData) {
         this.sku = prodData.getSku();
-        this.name = output.getName();
-        this.category = output.getCategory();
-        this.price = output.getPrice();
-        this.quantity = prodData.getQuantity();
+        this.name = prodData.getName() != null ? prodData.getName() : output.getName();
+        this.description = prodData.getDescription() != null ? prodData.getDescription() : output.getDescription();
+        this.category = prodData.getCategory() != null ? prodData.getCategory() : output.getCategory();
+        this.price = prodData.getPrice() != null ? prodData.getPrice() : output.getPrice();
+        this.quantity = prodData.getQuantity() > 0 ? prodData.getQuantity() : output.getQuantity();
     }
 
-    public void updateOrderProducts(Product foundOrder, Product product) {
+    public void updateOrdersProducts(Product foundOrders, Product product) {
         this.sku = product.getSku();
-        this.name = foundOrder.getName();
-        this.category = foundOrder.getCategory();
-        this.price = foundOrder.getPrice();
-        this.quantity = foundOrder.getQuantity()-product.getQuantity();
+        this.name = foundOrders.getName();
+        this.category = foundOrders.getCategory();
+        this.price = foundOrders.getPrice();
+        this.quantity = foundOrders.getQuantity() - product.getQuantity();
     }
 }

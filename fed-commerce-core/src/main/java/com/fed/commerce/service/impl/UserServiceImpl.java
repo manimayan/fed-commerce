@@ -1,12 +1,10 @@
 package com.fed.commerce.service.impl;
 
 import com.fed.commerce.model.User;
-import com.fed.commerce.repository.OrderRepository;
 import com.fed.commerce.repository.UserRepository;
 import com.fed.commerce.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service

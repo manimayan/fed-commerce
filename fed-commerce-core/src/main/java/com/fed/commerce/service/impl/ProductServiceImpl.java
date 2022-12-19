@@ -31,18 +31,22 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public boolean updateProduct(Product prodData) {
-
+        boolean data = false;
         if (prodData.getSku() > 0) {
             Product output = repository.getProductbyId(prodData.getSku());
             if (output != null) {
                 prodData.updateProductInputData(output, prodData);
                 repository.updateProd(prodData);
                 log.info("product updated successfully - {} -  {}", prodData.getSku(), prodData.getName());
+                data = true;
+            } else {
+                log.info("no product found to update");
             }
         } else {
             repository.saveProduct(prodData);
             log.info("product added successfully - {}", prodData.getName());
+            data = true;
         }
-        return true;
+        return data;
     }
 }
