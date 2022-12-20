@@ -1,0 +1,47 @@
+.navbar-brand {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+.logo {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-weight: 500;
+  color: rgb(255, 255, 255) !important;
+}
+
+.navbarright {
+  padding-left: 50%;
+  padding-right: 40px;
+}
+
+.navbar {
+  color: rgb(255, 255, 255) !important;
+  background: #4d148c !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(255, 255, 255) !important;
+}
+
+.d-flex {
+  display: flex;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.nav-details {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: small;
+}
