@@ -1,0 +1,44 @@
+.product-item {
+    .product-item-content {
+        border: 1px solid var(--surface-d);
+        border-radius: 3px;
+        margin: .3rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .product-image {
+        width: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    }
+}
+
+.grid-style {
+    float: left;
+    padding-left: 1em;
+}
+
+.prod-display {
+    display: flex;
+    margin-top: 5em;
+}
+
+::ng-deep .p-card {
+    background: #00000045 !important;
+    color: #000000;
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev,
+.p-carousel .p-carousel-content .p-carousel-next {
+    color: #ffffff;
+}
+
+::ng-deep .product-item {
+    background-color: #dfdfdfc7;
+    color: #000000;
+}
+
+.car-buttons {
+margin-top: 1em;
+
+}

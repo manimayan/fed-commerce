@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BooksService } from './booksservice';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookService: BooksService, private primengConfig: PrimeNGConfig) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {}
+
+  // loadProducts() {
+  //   return this.bookService.getProducts().subscribe(data => {
+  //     this.products = data;
+  //     this.electronics = this.products.filter(res => res.category == 'electronics');
+  //     this.books = this.products.filter(res => res.category == 'books');
+  //     this.stationery = this.products.filter(res => res.category == 'stationery');
+  //   });
+  // }
 
 }

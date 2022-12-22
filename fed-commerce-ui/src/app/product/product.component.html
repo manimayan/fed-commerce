@@ -1,1 +1,92 @@
-<p>product works!</p>
+<div class="container prod-display">
+    <div class="ui-grid">
+        <div class="ui-grid-col-4 grid-style">
+            <p-card class="product-card">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="assets/electronics.jpeg" width="90" height="190">
+                </ng-template>
+                <p-carousel [value]="electronics" orientation="vertical" [style]="{'max-width':'320px'}"
+                    verticalViewPortHeight="250px" [numVisible]="1" [numScroll]="1">
+                    <ng-template pTemplate="header">
+                    </ng-template>
+                    <ng-template let-product pTemplate="item">
+                        <div class="product-item">
+                            <div class="product-item-content">
+                                <div class="p-mb-3">
+                                </div>
+                                <div>
+                                    <h4 class="p-mb-1">{{product.name}}</h4>
+                                    <h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
+                                    <span class="p-mt-0 p-mb-3">{{product.category}}</span>
+                                    <br>
+                                    <div class="car-buttons p-mt-5">
+                                        <button pButton [routerLink]="['/product/electronics']"  type="button" label="View"
+                                            class="p-button-sm"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </p-card>
+        </div>
+        <div class="ui-grid-col-4  grid-style">
+            <p-card class="product-card">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="assets/stationery.jpg" width="90" height="190">
+                </ng-template>
+                <p-carousel [value]="stationery" orientation="vertical" [style]="{'max-width':'320px'}"
+                    verticalViewPortHeight="250px" [numVisible]="1" [numScroll]="1">
+                    <ng-template pTemplate="header">
+                    </ng-template>
+                    <ng-template let-product pTemplate="item">
+                        <div class="product-item">
+                            <div class="product-item-content">
+                                <div class="p-mb-3">
+                                </div>
+                                <div>
+                                    <h4 class="p-mb-1">{{product.name}}</h4>
+                                    <h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
+                                    <span class="p-mt-0 p-mb-3">{{product.category}}</span>
+                                    <div class="car-buttons p-mt-5">
+                                        <button pButton [routerLink]="['/product/stationery']" type="button" label="View"
+                                            class="p-button-sm"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </p-card>
+        </div>
+        <div class="ui-grid-col-4  grid-style">
+            <p-card class="product-card">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="assets/books.png" width="90" height="190">
+                </ng-template>
+                <p-carousel [value]="books" orientation="vertical" [style]="{'max-width':'320px'}"
+                    verticalViewPortHeight="250px" [numVisible]="1" [numScroll]="1">
+                    <ng-template pTemplate="header">
+                    </ng-template>
+                    <ng-template let-product pTemplate="item">
+                        <div class="product-item">
+                            <div class="product-item-content">
+                                <div class="p-mb-3">
+                                </div>
+                                <div>
+                                    <h4 class="p-mb-1">{{product.name}}</h4>
+                                    <h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
+                                    <span class="p-mt-0 p-mb-3">{{product.category}}</span>
+                                    <div class="car-buttons p-mt-5">
+                                        <button pButton [routerLink]="['/product/books']" type="button" label="View"
+                                            class="p-button-sm"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </p-card>
+        </div>
+    </div>
+</div>
