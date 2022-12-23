@@ -50,7 +50,7 @@ The below are the URL's involved in running the prototype,
 🔷 Open API Docs
 🔷 Cloud Integration
 
-#### Functionality
+#### Functional
 🔷 Return Processing
 🔷 Cart Availability Period(Time Limit)
 🔷 Order Status
